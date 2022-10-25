@@ -1,15 +1,20 @@
 <template>
   <div class="movie-box">
     <a v-on:click.stop="detailMovie">
-      <div class="a-img">
+      <div class="a-img card">
         <img :src="propsdata.image" />
       </div>
-      <h2 class="a-title">
-        {{ propsdata.title }} <small>{{ propsdata.original_title }}</small>
-      </h2>
-      <p class="a-desc">
-        {{ propsdata.description }}
-      </p>
+      <div class="a-img-back card">
+        <h2 class="a-title">
+          {{ propsdata.title }}
+          <br />
+          <span>{{ propsdata.original_title }}</span>
+        </h2>
+
+        <p class="a-desc">
+          {{ propsdata.description }}
+        </p>
+      </div>
     </a>
   </div>
 </template>
@@ -47,12 +52,9 @@ export default {
 
 .a-img {
   position: relative;
-  display: block;
-  width: 100%;
-  image-orientation: left;
-  height: 500px;
-  overflow: hidden;
-  border-radius: 10px;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 30;
 }
 
 .a-img img {
@@ -60,30 +62,71 @@ export default {
   display: block;
   float: left;
   width: 100%;
-  height: 100%;
-  border-radius: 10px;
+  z-index: 30;
+  transition: 1s ease-in-out;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 }
 
-.a-title {
+.movie-box:hover .a-img img {
   position: relative;
-  display: none;
-  margin: 20px 0px;
+  width: 100%;
+  z-index: 60;
+  display: block;
+  transform: rotateY(0.5turn);
+}
+
+.a-img-back {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotateY(0.5turn);
+  backface-visibility: hidden;
+  transition: 1s ease-in-out;
+  transform-style: preserve-3d;
+  background: rgba(100, 100, 100, 0.534);
+  z-index: 70;
+}
+
+.movie-box:hover .a-img-back {
+  position: absolute;
+  display: block;
+  transform: rotateY(1turn);
+  z-index: 70;
+}
+
+.a-img-back .a-title {
+  position: relative;
+  display: block;
   text-align: center;
   font-size: 18px;
+  line-height: 24px;
+  padding: 13px 0;
 }
 
-.a-title small {
-  display: none;
-  float: right;
+.a-img-back .a-title span {
+  position: relative;
+  display: block;
+  text-align: center;
+
   font-size: 14px;
+  line-height: 18px;
+  margin-top: 12px;
   color: #666;
 }
 
-.a-desc {
+.a-img-back .a-desc {
   position: relative;
-  display: none;
-  font-size: 12px;
-  line-height: 1.25;
-  color: #444;
+  display: inline-block;
+  font-weight: 500;
+  white-space: wrap;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 10px;
+  color: rgb(36, 36, 36);
+  padding: 0 8px;
 }
 </style>
