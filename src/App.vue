@@ -87,6 +87,10 @@ html {
   background-size: 100% 100%;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+}
+
 h2 {
   position: relative;
   display: inline-block;
@@ -140,7 +144,7 @@ h2 {
   box-shadow: inset 30px 0px 100px 20px #3d1e099a;
 }
 
-/* .intro {
+.intro {
   position: fixed;
   display: block;
   left: 0;
@@ -150,5 +154,5 @@ h2 {
   z-index: 99;
   background: #ed9323 url("./assets/intro1.gif") no-repeat center;
   background-size: 100%;
-} */
+}
 </style>

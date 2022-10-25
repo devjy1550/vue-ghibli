@@ -1,6 +1,6 @@
 <template>
   <div class="movie-box">
-    <a v-on:click.stop="detailMovie">
+    <a>
       <div class="a-img card">
         <img :src="propsdata.image" />
       </div>
@@ -10,10 +10,10 @@
           <br />
           <span>{{ propsdata.original_title }}</span>
         </h2>
-
         <p class="a-desc">
           {{ propsdata.description }}
         </p>
+        <button v-on:click.stop="detailMovie"></button>
       </div>
     </a>
   </div>
@@ -87,7 +87,7 @@ export default {
   backface-visibility: hidden;
   transition: 1s ease-in-out;
   transform-style: preserve-3d;
-  background: rgba(100, 100, 100, 0.534);
+  background: rgba(49, 49, 49, 0.637);
   z-index: 70;
 }
 
@@ -118,15 +118,25 @@ export default {
   color: #666;
 }
 
-.a-img-back .a-desc {
+.a-desc {
   position: relative;
-  display: inline-block;
+  display: block;
   font-weight: 500;
   white-space: wrap;
   font-size: 16px;
   line-height: 20px;
   margin-top: 10px;
-  color: rgb(36, 36, 36);
+  color: #fff;
   padding: 0 8px;
+}
+
+.a-img-back button {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background: red;
 }
 </style>
