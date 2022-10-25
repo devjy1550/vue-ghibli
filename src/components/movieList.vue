@@ -133,10 +133,19 @@ export default {
 .a-img-back button {
   position: absolute;
   display: block;
-  bottom: 0;
-  right: 0;
-  width: 10px;
-  height: 10px;
-  background: red;
+  bottom: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  cursor: pointer;
+  transition: all 1s;
+  background: url("@/assets/info.png") no-repeat center;
+  background-size: contain;
+}
+
+.a-img-back button:hover {
+  background: url("@/assets/info-on.png") no-repeat center;
+  background-size: contain;
 }
 </style>

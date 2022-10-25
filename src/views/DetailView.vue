@@ -7,13 +7,16 @@
       backgroundPosition: 'center',
     }"
   >
-    <a class="a-back" v-on:click.stop="back">list</a>
     <div class="movie-detail">
       <img class="movie-image" :src="movieInfo.image" />
       <div class="movie-info-wrap">
         <h2 class="movie-title">
-          {{ movieInfo.title }} <small>{{ movieInfo.original_title }}</small>
+          {{ movieInfo.title }}
+          <br />
+          <span>{{ movieInfo.original_title }}</span>
         </h2>
+        <a class="a-back" v-on:click.stop="back">list</a>
+
         <p class="movie-info">
           release_date : {{ movieInfo.release_date }} <br />
           director : {{ movieInfo.director }} <br />
@@ -78,21 +81,43 @@ export default {
   display: block;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  border: 120px solid rgb(15, 15, 15);
+  border-left: 0;
+  border-right: 0;
+  padding: 40px 0;
+}
+
+.movie-box::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 100%;
+  height: calc(100% + 40px);
+  border: 80px dashed #666;
+  border-left: 0;
+  border-right: 0;
 }
 
 .a-back {
   position: relative;
   display: block;
-  float: right;
-  margin-right: 20px;
   padding: 10px;
-  background: rgb(81, 164, 176);
+  background: rgba(17, 39, 43, 0.7);
+  color: #999;
   text-transform: uppercase;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 0 0 5px 5px;
   font-size: 10px;
-  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.a-back:hover {
+  color: #fff;
+  font-weight: 700;
+  background: rgba(17, 39, 43, 0.9);
 }
 
 .movie-detail {
@@ -107,18 +132,13 @@ export default {
   position: relative;
   display: block;
   width: 40%;
-  height: 80%;
-  border-radius: 10px;
-  border: 10px solid #fff;
-  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
-    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  border: 10px solid #222;
 }
 
 .movie-info-wrap {
   position: relative;
   display: block;
-  width: 45%;
-  margin-top: 40px;
+  width: 40%;
 }
 
 .movie-title {
@@ -126,35 +146,41 @@ export default {
   display: block;
   width: 100%;
   font-size: 20px;
-  background: #fff;
-  border-radius: 5px;
+  line-height: 24px;
+  background: rgba(231, 231, 231, 0.897);
+  border-radius: 5px 5px 0 0;
   color: #333;
   box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
     0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 20px 0;
 }
 
-.movie-title small {
+.movie-title span {
   position: relative;
   display: block;
-  float: right;
   color: #333;
   font-size: 12px;
+  line-height: 16px;
 }
 
 .movie-info {
   position: relative;
   display: block;
   width: 100%;
-  font-size: 14px;
-  background: #fff;
+  font-size: 18px;
+  line-height: 20px;
+  background: rgba(231, 231, 231, 0.897);
   border-radius: 5px;
   color: #333;
   box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
     0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 20px 0;
+  margin-bottom: 30px;
+}
+
+.movie-info:hover {
+  background: rgba(231, 231, 231, 0.95);
+  font-weight: 600;
 }
 
 .movie-desc {
@@ -163,13 +189,17 @@ export default {
   width: 100%;
   height: 200px;
   font-size: 14px;
-  background: #fff;
+  background: rgba(231, 231, 231, 0.897);
   border-radius: 5px;
   color: #333;
   box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
     0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
   padding: 20px;
-  margin-bottom: 20px;
+}
+
+.movie-desc:hover {
+  background: rgba(231, 231, 231, 0.95);
+  font-weight: 600;
 }
 
 .fade-enter-active,
