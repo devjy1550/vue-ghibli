@@ -123,8 +123,8 @@ export default {
   display: block;
   font-weight: 500;
   white-space: wrap;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 12px;
+  line-height: 16px;
   margin-top: 10px;
   color: #fff;
   padding: 0 8px;
