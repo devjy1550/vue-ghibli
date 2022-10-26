@@ -18,7 +18,6 @@
     </a>
   </div>
 </template>
-
 <script>
 //router를 이용한 페이지 이동
 import { useRouter } from "vue-router";
@@ -31,7 +30,6 @@ export default {
       //props를 참고하고자 할때는 setup(props)를 활용
       router.push("/page-ghibli/detail/" + props.propsdata.id);
     };
-
     return {
       detailMovie,
     };
@@ -102,20 +100,19 @@ export default {
   position: relative;
   display: block;
   text-align: center;
-  font-size: 18px;
-  line-height: 24px;
-  padding: 13px 0;
+  font-size: 24px;
+  line-height: 28px;
+  padding: 16px 0;
 }
 
 .a-img-back .a-title span {
   position: relative;
   display: block;
   text-align: center;
-
   font-size: 14px;
   line-height: 18px;
   margin-top: 12px;
-  color: #666;
+  color: rgb(94, 88, 88);
 }
 
 .a-desc {
@@ -127,7 +124,7 @@ export default {
   line-height: 16px;
   margin-top: 10px;
   color: #fff;
-  padding: 0 8px;
+  padding: 0 10px;
 }
 
 .a-img-back button {

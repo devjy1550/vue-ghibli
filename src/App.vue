@@ -1,7 +1,11 @@
 <template>
   <!-- <HomeView/> -->
   <div class="wrap">
-    <h2>Ghibli Studio Movies</h2>
+    <h2>
+      - Ghibli Studio -
+      <span>Movie Gallery</span>
+    </h2>
+
     <div class="container">
       <Transition name="fade">
         <!-- <div class="intro" v-if="show" @click="hideIntro"></div> -->
@@ -95,13 +99,22 @@ h2 {
   position: relative;
   display: inline-block;
   font-size: 60px;
-  line-height: 120px;
+  line-height: 64px;
   text-align: center;
   color: rgb(75, 42, 0);
   background: url("@/assets/title-tx.png") top;
   border-bottom: 1px solid #5e301a;
   width: 100%;
   z-index: 10;
+  padding: 30px 0;
+}
+
+h2 > span {
+  position: relative;
+  display: block;
+  font-size: 30px;
+  line-height: 36px;
+  color: rgb(141, 80, 0);
 }
 
 .container {
@@ -143,7 +156,7 @@ h2 {
 
   box-shadow: inset 30px 0px 100px 20px #3d1e099a;
 }
-
+/* 
 .intro {
   position: fixed;
   display: block;
@@ -154,5 +167,5 @@ h2 {
   z-index: 99;
   background: #ed9323 url("./assets/intro1.gif") no-repeat center;
   background-size: 100%;
-}
+} */
 </style>
